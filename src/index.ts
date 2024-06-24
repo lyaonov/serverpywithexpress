@@ -8,7 +8,7 @@ const port = 3000;
 app.use(cors());
 
 app.get('/python', (req: Request, res: Response) => {
-  exec('python3 src/index.py', (error, stdout, stderr) => {
+  exec('python src/index.py', (error, stdout, stderr) => {
     if (error) {
       console.error(`Error executing script: ${error.message}`);
       res.status(500).send(`Error executing script: ${error.message}`);
